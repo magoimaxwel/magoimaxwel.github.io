@@ -7,11 +7,10 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #2d3436;
-            --secondary-color: #0984e3;
-            --background-color: #f5f6fa;
-            --text-color: #2d3436;
-            --card-background: #ffffff;
+            --primary-color: #fff;
+            --secondary-color: #000;
+            --background-color: #000;
+            --text-color: #fff;
         }
 
         * {
@@ -21,92 +20,118 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
         }
 
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow-x: hidden;
+        }
+
         body {
             background-color: var(--background-color);
-            color: var(--text-color);
+            color: var(--secondary-color);
             line-height: 1.6;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 2rem;
+            width: 100%;
         }
 
         header {
-            background-color: var(--card-background);
-            padding: 2rem;
-            border-radius: 20px;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background-color: #000;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #fff;
+            width: 100%;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .header-links {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .header-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        .hiring-btn {
+            background: linear-gradient(45deg, #007bff, #ffffff);
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
         }
 
         .hero {
-            text-align: center;
-            margin-bottom: 2rem;
+            height: calc(100vh - 80px); /* Full viewport height minus the header height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            text-align: left;
+            background-color: #000;
+            color: #fff;
+            padding: 2rem;
+            width: 100%;
         }
 
         .hero h1 {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
+            font-size: 4rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
         }
 
         .hero h2 {
-            font-size: 1.5rem;
-            color: var(--secondary-color);
+            font-size: 2rem;
             font-weight: 500;
-            margin-bottom: 1rem;
+            max-width: 800px;
+            margin-bottom: 2rem;
+            line-height: 1.5;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            color: #fff;
         }
 
         .section {
-            background-color: var(--card-background);
+            background-color: var(--background-color);
             padding: 2rem;
             border-radius: 20px;
             margin-bottom: 2rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            color: var(--text-color);
         }
 
         .section h3 {
-            color: var(--secondary-color);
-            margin-bottom: 1rem;
             font-size: 1.8rem;
+            color: var(--text-color);
+            margin-bottom: 1rem;
         }
 
-        .skills-grid {
+        .skills-grid, .portfolio-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 1.5rem;
-            margin-top: 1.5rem;
         }
 
-        .skill-card {
-            background-color: var(--background-color);
+        .skill-card, .portfolio-item {
+            background-color: #1a1a1a;
             padding: 1.5rem;
             border-radius: 15px;
-            transition: transform 0.3s ease;
-        }
-
-        .skill-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 1.5rem;
-        }
-
-        .portfolio-item {
-            background-color: var(--background-color);
-            padding: 1.5rem;
-            border-radius: 15px;
-            transition: transform 0.3s ease;
-        }
-
-        .portfolio-item:hover {
-            transform: translateY(-5px);
         }
 
         .contact-links {
@@ -117,113 +142,125 @@
         }
 
         .contact-link {
-            color: var(--secondary-color);
+            color: var(--primary-color);
             text-decoration: none;
             font-size: 1.2rem;
-            transition: color 0.3s ease;
         }
 
-        .contact-link:hover {
-            color: var(--primary-color);
-        }
-
-        .affiliations {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .container {
+            .hero {
                 padding: 1rem;
             }
-            
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero h2 {
+                font-size: 1.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section {
+                padding: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+
             .hero h1 {
                 font-size: 2rem;
             }
-            
+
             .hero h2 {
                 font-size: 1.2rem;
+            }
+
+            .hero p {
+                font-size: 0.9rem;
+            }
+
+            .hiring-btn {
+                padding: 0.5rem;
+                font-size: 0.9rem;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <!-- Header -->
         <header>
-            <div class="hero">
-                <h1>Magoi Maxwel</h1>
-                <h2>Siemens Certified Mechatronic Systems Professional | Mechatronic Engineer | VR/AR Developer</h2>
-                <p>Specializing in Industrial Automation, IIoT, SCADA Systems, and XR Solutions</p>
+            <h1>Magoi Maxwel</h1>
+            <div class="header-links">
+                <a href="#">Blog</a>
+                <button class="hiring-btn">Hire Me</button>
             </div>
         </header>
 
-        <section class="section">
-            <h3>Professional Summary</h3>
-            <p>I am a passionate engineer and developer with a BSc in Mechatronic Engineering, graduating with a second upper-class division. I bring expertise in industrial automation, augmented and virtual reality (AR/VR) solutions, and advanced digital tools for modern manufacturing and industrial training.</p>
-            <p>With over three cohorts of Siemens-certified associates trained, I excel at breaking down complex systems and delivering solutions that enhance productivity, training, and efficiency. I also specialize in retrofit and upgrade services for industrial automation systems, a high-demand service across Africa.</p>
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>Magoi Maxwel</h1>
+            <h2>Specializing in Industrial Automation, IIoT, SCADA Systems, and XR Solutions</h2>
+            <p>Come and see what I’m currently working on ⟶</p>
         </section>
 
+        <!-- Professional Summary -->
+        <section class="section">
+            <h3>Professional Summary</h3>
+            <p>I am a passionate engineer and developer with a BSc in Mechatronic Engineering. I specialize in industrial automation, AR/VR solutions, and advanced digital tools for modern manufacturing and industrial training.</p>
+        </section>
+
+        <!-- Core Expertise -->
         <section class="section">
             <h3>Core Expertise</h3>
             <div class="skills-grid">
                 <div class="skill-card">
                     <h4>Industrial Automation</h4>
-                    <p>Proficient in Siemens, Mitsubishi, Schneider, and Allen-Bradley systems</p>
+                    <p>Proficient in Siemens, Mitsubishi, Schneider, and Allen-Bradley systems.</p>
                 </div>
                 <div class="skill-card">
                     <h4>IIoT & SCADA Development</h4>
-                    <p>Pioneering customizable SCADA systems with minimal configuration</p>
+                    <p>Pioneering customizable SCADA systems with minimal configuration.</p>
                 </div>
                 <div class="skill-card">
                     <h4>XR Development</h4>
-                    <p>Developing VR/AR applications for industrial training using Unity and Blender</p>
+                    <p>Developing VR/AR applications for industrial training using Unity and Blender.</p>
                 </div>
                 <div class="skill-card">
                     <h4>Automotive Innovation</h4>
-                    <p>ADAS systems and self-driving capabilities development</p>
+                    <p>ADAS systems and self-driving capabilities development.</p>
                 </div>
             </div>
         </section>
 
+        <!-- Portfolio Highlights -->
         <section class="section">
             <h3>Portfolio Highlights</h3>
             <div class="portfolio-grid">
                 <div class="portfolio-item">
                     <h4>VR Training System</h4>
-                    <p>Immersive virtual reality tool for industrial automation scenarios</p>
+                    <p>Immersive virtual reality tool for industrial automation scenarios.</p>
                 </div>
                 <div class="portfolio-item">
                     <h4>ADAS Prototype</h4>
-                    <p>Open-source ADAS system with forward collision warning</p>
+                    <p>Open-source ADAS system with forward collision warning.</p>
                 </div>
                 <div class="portfolio-item">
                     <h4>SCADA Platform</h4>
-                    <p>Modular SCADA platform for rapid deployment</p>
-                </div>
-                <div class="portfolio-item">
-                    <h4>Predictive Maintenance Device</h4>
-                    <p>Motor monitoring device with IIoT integration</p>
-                </div>
-                <div class="portfolio-item">
-                    <h4>E-Commerce Scraping System</h4>
-                    <p>AI-powered product ranking and price alerts platform</p>
+                    <p>Modular SCADA platform for rapid deployment.</p>
                 </div>
             </div>
         </section>
 
-        <section class="section">
-            <h3>Professional Affiliations</h3>
-            <div class="affiliations">
-                <span>Siemens Mechatronic Certificate Center</span>
-                <span>Swiss Smart Factory</span>
-                <span>TVET Kenya</span>
-                <span>Africa Organisation for Standardisation</span>
-            </div>
-        </section>
-
+        <!-- Get in Touch -->
         <section class="section">
             <h3>Get in Touch</h3>
             <div class="contact-links">
