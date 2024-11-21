@@ -50,80 +50,12 @@
             width: 100%;
         }
 
-        header h1 {
-            font-size: 1.8rem;
-            font-weight: bold;
-        }
-
-        .header-links {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-        }
-
-        .header-links a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 1rem;
-        }
-
-        .hiring-btn {
-            background: linear-gradient(45deg, #007bff, #ffffff);
-            color: #fff;
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .hero {
-            height: calc(100vh - 80px); /* Full viewport height minus the header height */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
-            text-align: left;
-            position: relative;
-            background-image: url('background-image.jpg');
-            background-size: cover;
-            background-position: center;
-            color: #fff;
-            padding: 2rem;
-            width: 100%;
-            overflow: hidden;
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
-        }
-
-        .hero h2 {
-            font-size: 2rem;
-            font-weight: 500;
-            max-width: 800px;
-            margin-bottom: 2rem;
-            line-height: 1.5;
-        }
-
-        .hero p {
-            font-size: 1.5rem;
-            color: #fff;
-        }
-
         .section {
             background-color: var(--background-color);
             padding: 2rem;
             border-radius: 20px;
             margin-bottom: 2rem;
             color: var(--text-color);
-        }
-
-        .section h3 {
-            font-size: 1.8rem;
-            color: var(--text-color);
-            margin-bottom: 1rem;
         }
 
         .skills-grid, .portfolio-grid {
@@ -134,8 +66,47 @@
 
         .skill-card, .portfolio-item {
             background-color: #1a1a1a;
-            padding: 1.5rem;
             border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .skill-card-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .skill-card-content {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .skill-card h4 {
+            margin-bottom: 0.5rem;
+            color: #fff;
+            font-size: 1.2rem;
+        }
+
+        .skill-card p {
+            flex-grow: 1;
+            margin-bottom: 1rem;
+            color: #ccc;
+        }
+
+        .read-more-btn {
+            background: linear-gradient(45deg, #007bff, #ffffff);
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            align-self: flex-start;
+            margin-top: auto;
         }
 
         .contact-links {
@@ -227,20 +198,36 @@
             <h3>Core Expertise</h3>
             <div class="skills-grid">
                 <div class="skill-card">
-                    <h4>Industrial Automation</h4>
-                    <p>Proficient in Siemens, Mitsubishi, Schneider, and Allen-Bradley systems.</p>
+                    <img src="/api/placeholder/800/400" alt="Industrial Automation" class="skill-card-image">
+                    <div class="skill-card-content">
+                        <h4>Industrial Automation</h4>
+                        <p>Proficient in Siemens, Mitsubishi, Schneider, and Allen-Bradley systems.</p>
+                        <a href="#" class="read-more-btn">Read More</a>
+                    </div>
                 </div>
                 <div class="skill-card">
-                    <h4>IIoT & SCADA Development</h4>
-                    <p>Pioneering customizable SCADA systems with minimal configuration.</p>
+                    <img src="/api/placeholder/800/400" alt="IIoT & SCADA Development" class="skill-card-image">
+                    <div class="skill-card-content">
+                        <h4>IIoT & SCADA Development</h4>
+                        <p>Pioneering customizable SCADA systems with minimal configuration.</p>
+                        <a href="#" class="read-more-btn">Read More</a>
+                    </div>
                 </div>
                 <div class="skill-card">
-                    <h4>XR Development</h4>
-                    <p>Developing VR/AR applications for industrial training using Unity and Blender.</p>
+                    <img src="/api/placeholder/800/400" alt="XR Development" class="skill-card-image">
+                    <div class="skill-card-content">
+                        <h4>XR Development</h4>
+                        <p>Developing VR/AR applications for industrial training using Unity and Blender.</p>
+                        <a href="#" class="read-more-btn">Read More</a>
+                    </div>
                 </div>
                 <div class="skill-card">
-                    <h4>Automotive Innovation</h4>
-                    <p>ADAS systems and self-driving capabilities development.</p>
+                    <img src="/api/placeholder/800/400" alt="Automotive Innovation" class="skill-card-image">
+                    <div class="skill-card-content">
+                        <h4>Automotive Innovation</h4>
+                        <p>ADAS systems and self-driving capabilities development.</p>
+                        <a href="#" class="read-more-btn">Read More</a>
+                    </div>
                 </div>
             </div>
         </section>
