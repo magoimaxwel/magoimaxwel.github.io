@@ -38,8 +38,6 @@
             max-width: 100%;
             margin: 0 auto;
             width: 100%;
-            min-height: 100vh; /* Full viewport height */
-            background-color: var(--background-color);
         }
 
         header {
@@ -86,11 +84,10 @@
             align-items: flex-start;
             text-align: left;
             position: relative;
-            background-image: url('background-image.jpg');
-            background-size: cover;
+            background-image: url('https://images.unsplash.com/photo-1551434678-e076c223a692');
+            background-size: 100% 100%; /* Full width and height */
             background-position: center;
             color: #fff;
-            padding: 2rem;
             width: 100%;
             overflow: hidden;
         }
@@ -110,6 +107,7 @@
             position: relative;
             z-index: 2;
             max-width: 800px;
+            margin-left: 2rem; /* Ensures content is positioned similarly to original design */
         }
 
         .hero h1 {
@@ -130,6 +128,7 @@
             font-size: 1.5rem;
             color: #fff;
         }
+
 
         .section {
             background-color: var(--background-color);
