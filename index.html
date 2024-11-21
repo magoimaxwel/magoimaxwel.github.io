@@ -50,6 +50,69 @@
             width: 100%;
         }
 
+        header h1 {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .header-links {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .header-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        .hiring-btn {
+            background: linear-gradient(45deg, #007bff, #ffffff);
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .hero {
+            height: calc(100vh - 80px); /* Full viewport height minus the header height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            text-align: left;
+            position: relative;
+            background-image: url('background-image.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            padding: 2rem;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+            font-weight: 500;
+            max-width: 800px;
+            margin-bottom: 2rem;
+            line-height: 1.5;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            color: #fff;
+        }
+
+
         .section {
             background-color: var(--background-color);
             padding: 2rem;
