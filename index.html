@@ -41,17 +41,13 @@
         }
 
         header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            background-color: rgba(0,0,0,0.7);
+            background-color: #000;
             padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
             color: #fff;
             width: 100%;
-            z-index: 100;
         }
 
         header h1 {
@@ -81,15 +77,20 @@
         }
 
         .hero {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('https://images.unsplash.com/photo-1551434678-e076c223a692');
+            height: calc(100vh - 80px); /* Full viewport height minus the header height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            text-align: left;
+            position: relative;
+            background-image: url('background-image.jpg');
             background-size: cover;
             background-position: center;
-            z-index: 1;
+            color: #fff;
+            padding: 2rem;
+            width: 100%;
+            overflow: hidden;
         }
 
         .hero::before {
@@ -100,25 +101,13 @@
             width: 100%;
             height: 100%;
             background-color: rgba(0, 0, 0, 0.6); /* Dark overlay */
-            z-index: 2;
-        }
-
-        .content-wrapper {
-            position: relative;
-            z-index: 3;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            color: #fff;
-            text-align: center;
-            padding: 0 2rem;
+            z-index: 1;
         }
 
         .hero-content {
+            position: relative;
+            z-index: 2;
             max-width: 800px;
-            text-align: center;
         }
 
         .hero h1 {
@@ -130,6 +119,7 @@
         .hero h2 {
             font-size: 2rem;
             font-weight: 500;
+            max-width: 800px;
             margin-bottom: 2rem;
             line-height: 1.5;
         }
@@ -137,17 +127,6 @@
         .hero p {
             font-size: 1.5rem;
             color: #fff;
-        }
-
-        .sections-container {
-            position: relative;
-            z-index: 10;
-            margin-top: 100vh;
-            background-color: var(--background-color);
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
-            padding: 0 1rem;
         }
 
         .section {
@@ -191,6 +170,10 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
+            .hero {
+                padding: 1rem;
+            }
+
             .hero h1 {
                 font-size: 2.5rem;
             }
@@ -231,77 +214,72 @@
         </header>
 
         <!-- Hero Section -->
-        <div class="hero">
-            <div class="content-wrapper">
-                <div class="hero-content">
-                    <h1>Magoi Maxwel</h1>
-                    <h2>Specializing in Industrial Automation, IIoT, SCADA Systems, and XR Solutions</h2>
-                    <p>Come and see what I'm currently working on ⟶</p>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Magoi Maxwel</h1>
+                <h2>Specializing in Industrial Automation, IIoT, SCADA Systems, and XR Solutions</h2>
+                <p>Come and see what I'm currently working on ⟶</p>
+            </div>
+        </section>
+
+        <!-- Professional Summary -->
+        <section class="section">
+            <h3>Professional Summary</h3>
+            <p>I am a passionate engineer and developer with a BSc in Mechatronic Engineering. I specialize in industrial automation, AR/VR solutions, and advanced digital tools for modern manufacturing and industrial training.</p>
+        </section>
+
+        <!-- Core Expertise -->
+        <section class="section">
+            <h3>Core Expertise</h3>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h4>Industrial Automation</h4>
+                    <p>Proficient in Siemens, Mitsubishi, Schneider, and Allen-Bradley systems.</p>
+                </div>
+                <div class="skill-card">
+                    <h4>IIoT & SCADA Development</h4>
+                    <p>Pioneering customizable SCADA systems with minimal configuration.</p>
+                </div>
+                <div class="skill-card">
+                    <h4>XR Development</h4>
+                    <p>Developing VR/AR applications for industrial training using Unity and Blender.</p>
+                </div>
+                <div class="skill-card">
+                    <h4>Automotive Innovation</h4>
+                    <p>ADAS systems and self-driving capabilities development.</p>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- Sections Container -->
-        <div class="sections-container">
-            <!-- Professional Summary -->
-            <section class="section">
-                <h3>Professional Summary</h3>
-                <p>I am a passionate engineer and developer with a BSc in Mechatronic Engineering. I specialize in industrial automation, AR/VR solutions, and advanced digital tools for modern manufacturing and industrial training.</p>
-            </section>
-
-            <!-- Core Expertise -->
-            <section class="section">
-                <h3>Core Expertise</h3>
-                <div class="skills-grid">
-                    <div class="skill-card">
-                        <h4>Industrial Automation</h4>
-                        <p>Proficient in Siemens, Mitsubishi, Schneider, and Allen-Bradley systems.</p>
-                    </div>
-                    <div class="skill-card">
-                        <h4>IIoT & SCADA Development</h4>
-                        <p>Pioneering customizable SCADA systems with minimal configuration.</p>
-                    </div>
-                    <div class="skill-card">
-                        <h4>XR Development</h4>
-                        <p>Developing VR/AR applications for industrial training using Unity and Blender.</p>
-                    </div>
-                    <div class="skill-card">
-                        <h4>Automotive Innovation</h4>
-                        <p>ADAS systems and self-driving capabilities development.</p>
-                    </div>
+        <!-- Portfolio Highlights -->
+        <section class="section">
+            <h3>Portfolio Highlights</h3>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <h4>VR Training System</h4>
+                    <p>Immersive virtual reality tool for industrial automation scenarios.</p>
                 </div>
-            </section>
-
-            <!-- Portfolio Highlights -->
-            <section class="section">
-                <h3>Portfolio Highlights</h3>
-                <div class="portfolio-grid">
-                    <div class="portfolio-item">
-                        <h4>VR Training System</h4>
-                        <p>Immersive virtual reality tool for industrial automation scenarios.</p>
-                    </div>
-                    <div class="portfolio-item">
-                        <h4>ADAS Prototype</h4>
-                        <p>Open-source ADAS system with forward collision warning.</p>
-                    </div>
-                    <div class="portfolio-item">
-                        <h4>SCADA Platform</h4>
-                        <p>Modular SCADA platform for rapid deployment.</p>
-                    </div>
+                <div class="portfolio-item">
+                    <h4>ADAS Prototype</h4>
+                    <p>Open-source ADAS system with forward collision warning.</p>
                 </div>
-            </section>
-
-            <!-- Get in Touch -->
-            <section class="section">
-                <h3>Get in Touch</h3>
-                <div class="contact-links">
-                    <a href="#" class="contact-link"><i class="fas fa-globe"></i> Website</a>
-                    <a href="#" class="contact-link"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                    <a href="#" class="contact-link"><i class="fas fa-envelope"></i> Email</a>
-                    <a href="#" class="contact-link"><i class="fab fa-github"></i> GitHub</a>
+                <div class="portfolio-item">
+                    <h4>SCADA Platform</h4>
+                    <p>Modular SCADA platform for rapid deployment.</p>
                 </div>
-            </section>
-        </div>
+            </div>
+        </section>
+
+        <!-- Get in Touch -->
+        <section class="section">
+            <h3>Get in Touch</h3>
+            <div class="contact-links">
+                <a href="#" class="contact-link"><i class="fas fa-globe"></i> Website</a>
+                <a href="#" class="contact-link"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="#" class="contact-link"><i class="fas fa-envelope"></i> Email</a>
+                <a href="#" class="contact-link"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+        </section>
     </div>
 </body>
 </html>
